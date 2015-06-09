@@ -3,7 +3,11 @@ def d(*args, **argv):
   d_name = argv.get('d_name', 'd')
   cur = inspect.currentframe()
   calling_frame = inspect.getouterframes(cur)[1]
+
   frameinfo = inspect.getframeinfo(calling_frame[0])
+  stack = inspect.stack()
+  print stack
+  import pdb; pdb.set_trace()
   string = frameinfo.code_context[0].strip()
   import ast
   ast_module = ast.parse(string)
@@ -37,11 +41,15 @@ def example(name, age, location, jank):
   # specify which values you want to pass
   #
   # so I propose instead the function d, prototyped above:
-  print """Meet {name}, {age} years old, based out of {location}""".format(**d(name, age, location))
+  print """Meet {name}, {age} years old, based out of {location}""".format(
+      **d(
+        name,
+        age,
+        location))
 
   # or, for the string formatting case, dformat
-  print dformat("""Meet {name}, {age} years old, based out of {location}""",
-      name, age, location)
+  #print dformat("""Meet {name}, {age} years old, based out of {location}""",
+  #    name, age, location)
 
 if __name__ == "__main__":
     example("@alexeymk", 26, "San Francisco", "this should remain private")
