@@ -1,1 +1,1 @@
-macropy
+git+git://github.com/AlexeyMK/macropy.git@support-for-function-macros

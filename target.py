@@ -1,4 +1,4 @@
-from macro_module import macros, d
+from macropy.d import macros, d
 
 age = 5
 name = "bob"
