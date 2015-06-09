@@ -1,0 +1,11 @@
+Next Steps.
+- with macropy:
+  - create own fork
+  - ensure that my code works with my macropy fork
+  - add own macro to macropy
+  - ensure that my version of macropy works as external dependency
+  - submit PR
+- without macropy:
+  - figure out minimal required parts
+  - copy them over
+  - make library

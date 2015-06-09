@@ -1,17 +1,11 @@
-from macro_module import macros, d# , ct
-
-name = "bob"
-# print d[ct(name, age=5)]
+from macro_module import macros, d
 
 age = 5
 name = "bob"
 
-person = {age: age, name: name}
-person = {age, name}
-person = dict(age=age, name=name)
-#person = d[ct(age, name)]
+# lets make some dictionaries.
+print {"age": "age", "name": name, "style": "literal"}
+print dict(age=age, name=name, style="dict")
 
-person = d(age, name,
-    other="stuff")
-print person
-# person = dict(age, name, other=5)
+# and now with d
+print d(age, name, style="short")
